@@ -1,16 +1,14 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
-gem 'haml'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'pg', group: :production
+gem 'thin'
 
 gem 'sqlite3'
 
-
-# Gems used only for assets and not required
-# in production environments by default.
+#--------------------------------------------------------------------------------
+# Assets
+#--------------------------------------------------------------------------------
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
@@ -26,19 +24,56 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+#--------------------------------------------------------------------------------
+# View
+#--------------------------------------------------------------------------------
+gem 'haml'
+gem 'haml-rails'
 gem 'jquery-rails'
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+#--------------------------------------------------------------------------------
+# View Helpers
+#--------------------------------------------------------------------------------
+gem 'simple_form'
+# gem 'kaminari', git: 'git://github.com/amatsuda/kaminari.git'
 
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
+#--------------------------------------------------------------------------------
+# Active Record
+#--------------------------------------------------------------------------------
+gem 'devise'
+gem "default_value_for"
+# gem "active_attr"
+# gem "hashie"
+# gem "meta_search"
 
-# Use unicorn as the app server
-# gem 'unicorn'
+#--------------------------------------------------------------------------------
+# Operation
+#--------------------------------------------------------------------------------
+gem "heroku_backup_task", git: "git://github.com/mataki/heroku_backup_task.git"
+gem "heroku"
+gem 'newrelic_rpm'
+# gem "airbrake"
 
-# Deploy with Capistrano
-# gem 'capistrano'
+#--------------------------------------------------------------------------------
+# Development & Test Tools
+#--------------------------------------------------------------------------------
+group :development do
+  gem 'heroku_san'
+  gem 'erb2haml'
+  gem "quiet_assets"
+  gem "letter_opener"
+  # gem 'i18n_generators'
+end
 
-# To use debugger
-# gem 'debugger'
+group :development, :test do
+  gem 'sqlite3'
+  gem 'rspec-rails'
+  gem 'fuubar'
+  gem 'capybara'
+  gem 'factory_girl_rails'
+  gem 'pry'
+
+  # if necessary js unit tests
+  # gem 'jasmine-rails'
+  # gem 'jasmine-headless-webkit'
+end
