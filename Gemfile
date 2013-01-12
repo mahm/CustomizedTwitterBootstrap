@@ -1,10 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.8'
+gem 'rails', '3.2.11'
 gem 'pg', group: :production
 gem 'thin'
-
-gem 'sqlite3'
 
 #--------------------------------------------------------------------------------
 # Assets
@@ -12,11 +10,12 @@ gem 'sqlite3'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-  gem 'bootstrap-sass', :git => "git@github.com:machida/bootstrap-sass.git", branch: 'master'
+  gem 'bootstrap-sass'
   gem 'compass-rails'
   gem 'sassy-buttons'
   gem 'font-awesome-sass-rails'
   gem "compass-rgbapng", :require => "rgbapng"
+  gem 'zurui-sass-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
@@ -49,9 +48,9 @@ gem "default_value_for"
 #--------------------------------------------------------------------------------
 # Operation
 #--------------------------------------------------------------------------------
-gem "heroku_backup_task", git: "git://github.com/mataki/heroku_backup_task.git"
-gem "heroku"
-gem 'newrelic_rpm'
+# gem "heroku_backup_task", git: "git://github.com/mataki/heroku_backup_task.git"
+# gem "heroku"
+# gem 'newrelic_rpm'
 # gem "airbrake"
 
 #--------------------------------------------------------------------------------
