@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.11'
+gem 'rails', '3.2.12'
 gem 'pg', group: :production
 gem 'thin'
 
@@ -15,7 +15,7 @@ group :assets do
   gem 'sassy-buttons'
   gem 'font-awesome-sass-rails'
   gem "compass-rgbapng", :require => "rgbapng"
-  gem 'zurui-sass-rails'
+  gem 'zurui-sass-rails', '~> 0.0.2'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
